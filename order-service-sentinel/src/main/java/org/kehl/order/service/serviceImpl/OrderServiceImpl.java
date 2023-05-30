@@ -5,12 +5,7 @@ import com.alibaba.csp.sentinel.slots.block.BlockException;
 import org.kehl.order.service.OrderService;
 import org.springframework.stereotype.Service;
 
-/**
- * springcloud-alibaba
- *
- * @author : kehl
- * @date : 2022-05-17 17:30
- **/
+
 @Service
 public class OrderServiceImpl implements OrderService {
     @Override

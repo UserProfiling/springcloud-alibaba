@@ -10,12 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-/**
- * springcloud-alibaba
- *
- * @author : kehl
- * @date : 2022-05-20 18:45
- **/
+
 @RestController
 @RequestMapping("gatewaySentinel")
 @Slf4j

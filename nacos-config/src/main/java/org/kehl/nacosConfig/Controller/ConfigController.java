@@ -5,12 +5,7 @@ import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-/**
- * springcloud-alibaba
- *
- * @author : kehl
- * @date : 2022-05-17 10:52
- **/
+
 @RestController
 @RequestMapping("config")
 @RefreshScope

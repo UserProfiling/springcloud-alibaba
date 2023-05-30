@@ -6,12 +6,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.client.RestTemplate;
 
-/**
- * springcloud-alibaba
- *
- * @author : kehl
- * @date : 2022-05-14 19:26
- **/
+
 @Configuration
 public class ApplicationConfig {
     @Bean

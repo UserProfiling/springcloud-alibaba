@@ -9,12 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-/**
- * springcloud-alibaba
- *
- * @author : kehl
- * @date : 2022-05-14 19:17
- **/
+
 @RestController
 @RequestMapping("/product")
 public class ProductController {

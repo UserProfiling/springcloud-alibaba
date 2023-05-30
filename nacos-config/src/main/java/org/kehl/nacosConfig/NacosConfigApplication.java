@@ -7,13 +7,7 @@ import org.springframework.context.ConfigurableApplicationContext;
 
 import java.util.concurrent.TimeUnit;
 
-/**
- * springcloud-alibaba
- * nacos配置中心
- *
- * @author : kehl
- * @date : 2022-05-16 20:44
- **/
+
 @SpringBootApplication
 public class NacosConfigApplication {
     public static void main(String []args) throws InterruptedException {

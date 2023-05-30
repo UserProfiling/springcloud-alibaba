@@ -16,13 +16,7 @@ import org.springframework.stereotype.Component;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- * springcloud-alibaba
- * 自定义统一的规则处理类
- *
- * @author : kehl
- * @date : 2022-05-17 16:42
- **/
+
 @Component
 @Slf4j
 public class MyBlockExceptionHandler implements BlockExceptionHandler {

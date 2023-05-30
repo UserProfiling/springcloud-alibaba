@@ -4,15 +4,7 @@ import feign.Logger;
 import org.kehl.order.interceptor.feign.CustomFeignInterceptor;
 import org.springframework.context.annotation.Bean;
 
-/**
- * springcloud-alibaba
- * Feign的配置文件
- *
- * 全局配置： 当使用@Configuration的时候，会将配置作用于所有的服务提供方
- * 局部配置： 如果只想针对莫i一个服务进行配置，就不要加@Configuration
- * @author : kehl
- * @date : 2022-05-16 15:40
- **/
+
 //@Configuration
 public class FeignConfig {
 

@@ -1,12 +1,6 @@
 package org.kehl.order.domain;
 
-/**
- * springcloud-alibaba
- * 返回结果
- *
- * @author : kehl
- * @date : 2022-05-17 16:47
- **/
+
 public class Result<T> {
     private Integer code;
     private String msg;

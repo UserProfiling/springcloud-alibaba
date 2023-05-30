@@ -8,13 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-/**
- * springcloud-alibaba
- * 用户控制层
- *
- * @author : kehl
- * @date : 2022-05-14 19:07
- **/
+
 @RestController
 @RequestMapping("/user")
 public class UserController {

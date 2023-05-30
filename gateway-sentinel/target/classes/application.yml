@@ -11,6 +11,14 @@ spring:
           uri: lb://order-seata-alibaba-service #集成nacos后地址就可以改为服务名,lb:load balance 使用nacos的本地负载均衡
           predicates:
             - Path=/order/**
+        - id: stock_route
+          uri: lb://stock-seata-alibaba-service
+          predicates:
+            - Path=/stock/**
+        - id: user_route
+          uri: lb://user-seata-alibaba-service
+          predicates:
+            - Path=/user/**
     nacos:
       discovery:
         server-addr: 127.0.0.1:8848

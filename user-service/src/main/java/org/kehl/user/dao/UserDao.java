@@ -8,12 +8,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.kehl.user.entity.User;
 import org.springframework.stereotype.Repository;
 
-/**
- * <h4>springcloud-alibaba</h4>
- * <p>用户实体</p>
- * @author : kehl
- * @date : 2022-05-14 18:54
- **/
+
 @Slf4j
 @Repository
 public class UserDao {

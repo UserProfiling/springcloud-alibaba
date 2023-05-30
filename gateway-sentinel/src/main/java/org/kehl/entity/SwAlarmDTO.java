@@ -10,8 +10,8 @@ import java.util.List;
  * springcloud-alibaba
  * skywalking 告警类
  *
- * @author : kehl
- * @date : 2022-05-22 16:38
+ * @author : wch
+ * @date : 2023-05-22 16:38
  **/
 @Getter
 @Setter

@@ -16,6 +16,7 @@
         <module>stock-seata</module>
         <module>order-seata-alibaba</module>
         <module>stock-seata-alibaba</module>
+        <module>user-seata-alibaba</module>
     </modules>
 
     <properties>

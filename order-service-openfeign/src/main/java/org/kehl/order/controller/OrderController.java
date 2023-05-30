@@ -16,12 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 import org.kehl.order.feign.ProductFeignService;
-/**
- * springcloud-alibaba
- *
- * @author : kehl
- * @date : 2022-05-14 19:27
- **/
+
 @RestController
 @RequestMapping("/order")
 @Slf4j

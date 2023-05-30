@@ -2,12 +2,6 @@ package org.kehl.order.entity;
 
 import lombok.Data;
 
-/**
- * springcloud-alibaba
- *
- * @author : kehl
- * @date : 2022-05-14 19:19
- **/
 @Data
 public class Order {
     /**

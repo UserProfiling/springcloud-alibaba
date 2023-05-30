@@ -8,13 +8,6 @@ import com.netflix.loadbalancer.Server;
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
-/**
- * springcloud-alibaba
- * 自定义的负载均衡策略
- *
- * @author : kehl
- * @date : 2022-05-16 14:19
- **/
 public class CustomRule extends AbstractLoadBalancerRule {
 
     @Override

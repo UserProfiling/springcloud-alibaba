@@ -13,12 +13,7 @@ import reactor.core.publisher.Mono;
 import javax.annotation.PostConstruct;
 import java.util.HashMap;
 
-/**
- * springcloud-alibaba
- *
- * @author : kehl
- * @date : 2022-05-20 20:44
- **/
+
 //自定义异常
 @Configuration
 public class GatewayConfig {

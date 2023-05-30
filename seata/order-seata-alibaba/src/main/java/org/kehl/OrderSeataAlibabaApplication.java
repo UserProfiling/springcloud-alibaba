@@ -12,12 +12,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.web.client.RestTemplate;
 
-/**
- * springcloud-alibaba
- *
- * @author : kehl
- * @date : 2022-05-19 14:49
- **/
+
 @SpringBootApplication
 @EnableTransactionManagement //开启本地事务@Transactional
 @EnableFeignClients

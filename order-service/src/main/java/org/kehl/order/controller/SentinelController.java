@@ -4,12 +4,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-/**
- * springcloud-alibaba
- *
- * @author : kehl
- * @date : 2022-05-14 19:53
- **/
+
 @Slf4j
 @RestController
 @RequestMapping("/sentinel")

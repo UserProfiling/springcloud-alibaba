@@ -12,7 +12,6 @@ spring:
     username: root
     password: 123456
 #    type: com.alibaba.druid.pool.DruidDataSource
-
   cloud:
     nacos:
       discovery:
@@ -28,7 +27,6 @@ spring:
         #service: 默认是${spring.application.name}
         #weight: 权重 数值越大，权重越大
         #metadata: 假设元数据中有 version=1，那么可以结合元数据做扩展功能
-
 #    #不使用ribbon
 #    loadbalancer:
 #      ribbon:
@@ -37,10 +35,20 @@ spring:
       transport:
         dashboard: localhost:8858 # 指定控制台服务的地址
         # 默认是 8719，通过该端口使得平台于微服务的到通信
+      web-context-unify: false #默认是true，即将调用链路收起来，不维护
+      datasource:
+        order-flow-rule: #这个名字可以自定义的
+          nacos:
+            serverAddr: 127.0.0.1:8848
+            #如果配置了权限管理，必须加用户名和密码
+            username: nacos
+            password: nacos
+            dataId: order-service-sentinel-flow-rule
+            ruleType: flow
     alibaba:
       seata:
         tx-service-group: my_test_tx_group #配置事务分组
-product-service:
+stock-seata-alibaba-service: #要调用的服务提供者的名称
   ribbon:
     NFLoadBalancerRuleClassName: com.alibaba.cloud.nacos.ribbon.NacosRule
 #    自定义的配置均衡算法
@@ -48,11 +56,10 @@ product-service:
 ribbon:
   eager-load:
     #配置服务提供者，使用ribbon的饥饿加载，多个的话使用逗号分隔
-    clients: product-service
+    clients: stock-seata-alibaba-service
     #开启饥饿加载
     enabled: true
 #  springboot默认的日志级别是info，feign的debug日志级别就不会输出
-
 seata:
   registry:
     #配置seata的注册中心，告诉seata client怎么去访问seataserver
@@ -73,12 +80,10 @@ seata:
       username: nacos
       password: nacos
       group: SEATA_GROUP
-
 #openfeign整合sentinel
 feign:
   sentinel:
     enabled: true
-
 # 设置mybatis
 mybatis:
   mapper-locations: classpath:mapping/*.xml

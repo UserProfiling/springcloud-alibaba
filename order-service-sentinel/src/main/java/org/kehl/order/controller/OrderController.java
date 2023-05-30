@@ -16,12 +16,7 @@ import org.springframework.web.client.RestTemplate;
 
 import java.util.concurrent.TimeUnit;
 
-/**
- * springcloud-alibaba
- *
- * @author : kehl
- * @date : 2022-05-14 19:27
- **/
+
 @RestController
 @RequestMapping("/order")
 @Slf4j

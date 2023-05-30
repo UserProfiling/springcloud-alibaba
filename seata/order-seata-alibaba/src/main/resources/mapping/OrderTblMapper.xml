@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.kehl.dao.OrderTblDao">
+
+    <resultMap type="org.kehl.entity.OrderTbl" id="OrderTblMap">
+        <result property="id" column="id" jdbcType="INTEGER"/>
+        <result property="userId" column="user_id" jdbcType="VARCHAR"/>
+        <result property="productId" column="product_id" jdbcType="VARCHAR"/>
+        <result property="totalAmount" column="total_amount" jdbcType="INTEGER"/>
+        <result property="money" column="money" jdbcType="NUMERIC"/>
+        <result property="status" column="status" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="OrderTblMap">
+        select id,
+               user_id,
+               product_id,
+               total_amount,
+               money,
+               status
+        from seata_order.order_tbl
+        where id = #{id}
+    </select>
+
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="OrderTblMap">
+        select id,
+               user_id,
+               product_id,
+               total_amount,
+               money,
+               status
+        from seata_order.order_tbl limit #{offset}, #{limit}
+    </select>
+
+    <!--通过实体作为筛选条件查询-->
+    <select id="queryAll" resultMap="OrderTblMap">
+        select
+        id, user_id, product_id, total_amount, money, status
+        from seata_order.order_tbl
+        <where>
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="userId != null and userId != ''">
+                and user_id = #{userId}
+            </if>
+            <if test="productId != null and productId != ''">
+                and product_id = #{productId}
+            </if>
+            <if test="totalAmount != null">
+                and total_amount = #{totalAmount}
+            </if>
+            <if test="money != null">
+                and money = #{money}
+            </if>
+            <if test="status != null">
+                and status = #{status}
+            </if>
+        </where>
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="id" useGeneratedKeys="true">
+        insert into seata_order.order_tbl(user_id, product_id, total_amount, money, status)
+        values (#{userId}, #{productId}, #{totalAmount}, #{money}, #{status})
+    </insert>
+
+    <insert id="insertBatch" keyProperty="id" useGeneratedKeys="true">
+        insert into seata_order.order_tbl(user_id, product_id, total_amount, money, status)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+            (#{entity.userId}, #{entity.productId}, #{entity.totalAmount}, #{entity.money}, #{entity.status})
+        </foreach>
+    </insert>
+
+    <insert id="insertOrUpdateBatch" keyProperty="id" useGeneratedKeys="true">
+        insert into seata_order.order_tbl(user_id, product_id, total_amount, money, status)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+            (#{entity.userId}, #{entity.productId}, #{entity.totalAmount}, #{entity.money}, #{entity.status})
+        </foreach>
+        on duplicate key update
+        user_id = values(user_id) , product_id = values(product_id) , total_amount = values(total_amount) , money =
+        values(money) , status = values(status)
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="update">
+        update seata_order.order_tbl
+        <set>
+            <if test="userId != null and userId != ''">
+                user_id = #{userId},
+            </if>
+            <if test="productId != null and productId != ''">
+                product_id = #{productId},
+            </if>
+            <if test="totalAmount != null">
+                total_amount = #{totalAmount},
+            </if>
+            <if test="money != null">
+                money = #{money},
+            </if>
+            <if test="status != null">
+                status = #{status},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete
+        from seata_order.order_tbl
+        where id = #{id}
+    </delete>
+
+    <!--查询单个-->
+    <select id="selectAllOrderByUserId" resultMap="OrderTblMap">
+        select id,
+               user_id,
+               product_id,
+               total_amount,
+               money,
+               status
+        from seata_order.order_tbl
+        where user_id = #{userId}
+    </select>
+
+</mapper>
+
